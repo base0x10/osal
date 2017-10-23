@@ -59,7 +59,7 @@ if ((OS_FDGetInfo(g_fDescs[0], &fdProps) != OS_FS_SUCCESS) ||       \
 /*--------------------------------------------*/
 
 /*--------------------------------------------*/
-#if defined(OSP_ARINC653) || defined(_RTEMS_OS_)
+#if defined(OSP_ARINC653) || defined(_RTEMS_OS_) || defined(COMPOSITE_OS)
 /*--------------------------------------------*/
 
 #define UT_OS_OUTPUT_TO_FILE_SUCCESS_COND_MACRO  1
@@ -72,7 +72,7 @@ if ((OS_FDGetInfo(g_fDescs[0], &fdProps) != OS_FS_SUCCESS) ||  \
     (strncmp(fdProps.Path, fileName, strlen(fileName)) != 0))
 
 /*--------------------------------------------*/
-#endif  /* OSP_ARINC653 */
+#endif  /* OSP_ARINC653 || COMPOSITE_OS */
 /*--------------------------------------------*/
 
 /*--------------------------------------------------------------------------------*
